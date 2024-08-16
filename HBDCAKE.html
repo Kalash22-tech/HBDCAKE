@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #282c34;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .message {
+            margin-top: 50px;
+            font-size: 36px;
+            font-weight: bold;
+        }
+        @keyframes rain {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+        .moon {
+            position: absolute;
+            font-size: 30px;
+            color: #f0f8ff;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">🎉 Happy Birthday! 🎈</div>
+    
+    <script>
+        function createMoonEmoji() {
+            const moonEmoji = '🎈';
+            const numMoons = 50; // Number of moon emojis to fall
+
+            for (let i = 0; i < numMoons; i++) {
+                const moon = document.createElement('div');
+                moon.className = 'moon';
+                moon.textContent = moonEmoji;
+                moon.style.left = `${Math.random() * 100}vw`;
+                moon.style.animation = `rain ${Math.random() * 5 + 5}s linear infinite`;
+                moon.style.opacity = Math.random();
+                document.body.appendChild(moon);
+            }
+        }
+
+        // Create moon emojis when the page loads
+        window.onload = createMoonEmoji;
+    </script>
+</body>
+</html>
+
