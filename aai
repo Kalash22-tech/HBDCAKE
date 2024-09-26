@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Aai!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Freestyle Script', cursive;
+            background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Balloons background */
+        .balloon {
+            width: 50px;
+            height: 80px;
+            background-color: #f06a6a;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -100px;
+            animation: floatUp 8s ease-in-out infinite;
+        }
+        .balloon:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .balloon:nth-child(2) { left: 30%; background-color: #ffcccb; animation-delay: 2s; }
+        .balloon:nth-child(3) { left: 50%; background-color: #ff9999; animation-delay: 4s; }
+        .balloon:nth-child(4) { left: 70%; background-color: #f06a6a; animation-delay: 6s; }
+        .balloon:nth-child(5) { left: 90%; background-color: #ffcccb; animation-delay: 1s; }
+
+        @keyframes floatUp {
+            0% { bottom: -100px; transform: translateX(0); }
+            50% { transform: translateX(30px); }
+            100% { bottom: 110vh; transform: translateX(0); }
+        }
+
+        /* Card styling */
+        .card {
+            width: 350px;
+            height: 450px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            transform: scale(0);
+            animation: cardOpen 2s forwards ease-in-out;
+        }
+
+        @keyframes cardOpen {
+            0% { transform: scale(0); }
+            100% { transform: scale(1); }
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #d6336c;
+            animation: textPop 1.5s ease forwards;
+        }
+
+        @keyframes textPop {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        p {
+            font-size: 22px;
+            color: #333;
+        }
+
+        .message {
+            display: none;
+            margin-top: 20px;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .btn {
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #f08080;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff6b6b;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Balloons -->
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+    <div class="balloon"></div>
+
+    <!-- Birthday Card -->
+    <div class="card">
+        <h1>Happy Birthday, Aai!</h1>
+        <p>You are our sunshine, and we love you beyond words!</p>
+        <button class="btn" onclick="showMessage()">Reveal Special Wish</button>
+        <p class="message">May your life always be filled with happiness and success, and may all your dreams come true with our blessings by your side.! 💖🎉</p>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.querySelector('.message').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
